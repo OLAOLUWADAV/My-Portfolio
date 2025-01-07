@@ -1,0 +1,215 @@
+/********** Global Variables **********/
+:root {
+    --primary: #6244C5;
+    --secondary: #FFC448;
+    --light: #FAFAFB;
+    --dark: #12141D;
+}
+
+/********** Utilities **********/
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/********** Back-to-Top Button **********/
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/********** Spinner **********/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+}
+
+/********** Buttons **********/
+.btn {
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.btn-primary,
+.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    padding: 0;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+/********** Navbar **********/
+.navbar.fixed-top {
+    display: none;
+    transition: 0.5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 20px 15px;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+/********** Header **********/
+#home {
+    margin-bottom: 6rem;
+    background: url(../img/bg-header.png) left top no-repeat;
+}
+
+.typed-cursor {
+    font-size: 30px;
+    color: var(--dark);
+}
+
+/********** Play Button **********/
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    padding: 18px 20px 20px 28px;
+    background: var(--primary);
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 100%;
+    animation: pulse-border 1.5s ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+
+.btn-play span {
+    position: relative;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border-left: 16px solid var(--primary);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+.btn-play span::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 22px;
+    height: 28px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMFeX0_qZR79sd59jTNIa7PyZ-pIn2temqYSc1wuBoml2HFWaiBP672WDWpM1z');
+    background-size: 23px 30px;
+}
+
+/********** Keyframe Animations **********/
+@keyframes pulse-border {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+/********** Portfolio **********/
+.portfolio-item:hover .portfolio-btn {
+    opacity: 1;
+    padding-bottom: 30px !important;
+}
+
+/********** Team **********/
+.team-item:hover img {
+    opacity: 0.7;
+}
+
+.team-item:hover .team-text {
+    right: 30px;
+    opacity: 1;
+}
+
+/********** Testimonials **********/
+.testimonial-carousel .owl-dot.active::after {
+    background: var(--primary);
+}
+
+/* Additional styling for modularity */
+.modal-video .close {
+    top: -30px;
+    color: #FFFFFF;
+    background: #000000;
+}
